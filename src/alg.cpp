@@ -34,17 +34,21 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
+    double s;
     if (count == 1) {
         return x;
     } else {
-        return (pown(-1, count - 1) * calcItem(x, 2 * count - 1)) + sinn(x, count - 1);
+        s = (pown(-1, count - 1) * calcItem(x, 2 * count - 1));
+        return s + sinn(x, count - 1);
     }
 }
 
 double cosn(double x, uint16_t count) {
+    double s;
     if (count == 1) {
         return 1;
     } else {
-        return (pown(-1, count - 1) * calcItem(x, 2 * count - 2)) + cosn(x, count - 1);
+        s = (pown(-1, count - 1) * calcItem(x, 2 * count - 2));
+        return s + cosn(x, count - 1);
     }
 }
